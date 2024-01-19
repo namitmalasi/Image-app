@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState(localStorage.getItem("token"));
@@ -50,6 +51,13 @@ const Login = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-10 py-20">
       <div className="w-full flex items-center justify-center gap-10">
+        {user && (
+          <Link to="/history">
+            <button className="border-black border-4 p-2 rounded">
+              History{" "}
+            </button>
+          </Link>
+        )}
         {user ? (
           <button
             onClick={handleSignOut}

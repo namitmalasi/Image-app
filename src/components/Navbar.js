@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex gap-6 text-xl">
+        
         <Link to="/login">
           <button className="border-black border-4 p-2 rounded">
             Sign up/Sign in
